@@ -4,4 +4,12 @@
     <string name="menu_share">Share</string>
     <string name="menu_like_by_star">Like by Star</string>
     <string name="menu_setting">Setting</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_import">Import</string>
+    <string name="title_back">Back</string>
+    <string name="title_play">Play</string>
+    <string name="title_next">Next</string>
+    <string name="title_export">Export</string>
+    <string name="title_stop">Stop</string>
+    <string name="hint_text">COPY - PASTE, IMPORT .DOC .TXT .PDF || SEND LINK FROM WEB</string>
 </resources>

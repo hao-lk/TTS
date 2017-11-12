@@ -11,7 +11,21 @@
         android:id="@+id/pdfView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/buttons" />
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttons"
+        android:layout_margin="5dp"
+        android:text="@string/hint_text" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/buttons"
+        android:background="#d1d1d1" />
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -21,43 +35,65 @@
         android:layout_centerHorizontal="true">
 
         <Button
+            android:id="@+id/btnImport"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_export_black_24dp"
+            android:text="@string/title_import"
+            android:textAllCaps="false"
+            tools:ignore="ButtonStyle" />
+
+        <Button
             android:id="@+id/prev_page"
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="prev." />
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_back_black_24dp"
+            android:text="@string/title_back"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/speak"
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Speak"
-            android:textAllCaps="true" />
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_play_black_24dp"
+            android:text="@string/title_play"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/stop"
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/pdfView"
-            android:layout_centerHorizontal="true"
-            android:text="Stop"
-            android:textAllCaps="true" />
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_stop_black_24dp"
+            android:text="@string/title_stop"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/next_page"
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="next" />
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_next_black_24dp"
+            android:text="@string/title_next"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/page"
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="next" />
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_export_black_24dp"
+            android:text="@string/title_export"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 </RelativeLayout>
