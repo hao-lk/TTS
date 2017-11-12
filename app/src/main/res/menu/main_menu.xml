@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_more_vert_black_24dp"
+        android:title=""
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_more"
+                android:icon="@drawable/ic_more_24dp"
+                android:title="@string/menu_more"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_share"
+                android:icon="@drawable/ic_share_black_24dp"
+                android:title="@string/menu_share"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_like"
+                android:icon="@drawable/ic_like"
+                android:title="@string/menu_like_by_star"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_setting"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/menu_setting"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+
+</menu>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c323c36ecc68965c4cfb460f7721113d2b61ed03">
+        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9caaeb9cf574e838b4102f4461ae91a62360a105/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eba5aa06d1f2c12c1cd279f8c0d547f69667a028">
+        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_78daa2a8cbb1c953aef526185c2c275d97e77e72/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/haolek/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/4.3.0/e874aaa3c69eb084f320e2895f582f81f0c08fa1/androidannotations-api-4.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e874aaa3c69eb084f320e2895f582f81f0c08fa1">
+        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/androidannotations-api-4.3.0_f0b394c213745907855ec7d6fddcc629b8ea7d78/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/haolek/Documents/PDF-Speaker/app/libs/itextpdf-5.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="391a5e410f8b95cd90b528ccc9aa618b1aee3b13">
+        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/2/itextpdf-5.5.1_a265c0ac4c6426a57a69f7d52649db3d45c51851/classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PDFSpeaker</string>
+    <string name="menu_more">More</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_like_by_star">Like by Star</string>
+    <string name="menu_setting">Setting</string>
+</resources>
