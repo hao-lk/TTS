@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rohan.android.pdfspeaker.ImportActivity">
+
+    <LinearLayout
+        android:id="@+id/llLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=".TXT .DOC .PDF" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_input_black_48dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llLogo"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="110dp">
+
+        <Button
+            android:id="@+id/btnChooseFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose File"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tvChooseFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/btnChooseFile"
+            android:text="No file chosen" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="Cancel"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="31dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="Import"
+        android:textAllCaps="false" />
+</RelativeLayout>
