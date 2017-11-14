@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rohan.android.pdfspeaker.ExportActivity">
+    tools:context="com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.ExportActivity">
 
     <LinearLayout
         android:id="@+id/llLogo"
@@ -35,10 +35,10 @@
         android:layout_marginTop="110dp">
 
         <ImageView
-            android:id="@+id/btnChooseFile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:id="@+id/imgViewMusic"
             android:layout_marginRight="10dp"
             android:src="@drawable/ic_music_black_24dp"
             android:textAllCaps="false" />
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/btnChooseFile"
+            android:layout_toEndOf="@+id/imgViewMusic"
             android:hint="Write a text" />
     </RelativeLayout>
 

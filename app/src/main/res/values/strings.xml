@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PDFSpeaker</string>
+    <string name="app_name">TextToSpeech</string>
     <string name="menu_more">More</string>
     <string name="menu_share">Share</string>
     <string name="menu_like_by_star">Like by Star</string>
@@ -12,4 +12,11 @@
     <string name="title_export">Export</string>
     <string name="title_stop">Stop</string>
     <string name="hint_text">COPY - PASTE, IMPORT .DOC .TXT .PDF || SEND LINK FROM WEB</string>
+
+    
+    <string-array name="array_sex">
+        <item>ALEX</item>
+        <item>TOM</item>
+        <item>MARY</item>
+    </string-array>
 </resources>

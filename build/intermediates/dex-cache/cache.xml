@@ -3,120 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/home/haolek/.android/build-cache/9106730c36246718ef50423bbacec779fdc9afc7/output/jars/classes.jar"
+        jar="/home/haolek/Documents/PDF-Speaker/app/libs/qoppapdf.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_11d74685394147a878e798b1d03a63efaac5db24/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/905f7c932e9e3b2f74218d717cadb3043d3d5f2b/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4961be1437163ab598620a3c907c0f3432936f51">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_79eaa8408bd71cf55ebea7e72d9b37a8f1617b14/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/9268ba52df75ed5b8152d2b28826631c62aaf717/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="40a6b8f05124eb9e6012e18b80a6dbd13440e283">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_121c1265fabfa8a3ced334557e682109ef36a778/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.4.0_5ef094c37a17b933467820aeac3119f7fdc2aa89/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/e71a15ba74a9f4d978c0fb72282ac3ab0ffd6e86/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2364fe4f272f4937061aa38b0df1d923ef8090a1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6b6ab306ea3bd2e1ef444ade274329304ca89aff">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_78daa2a8cbb1c953aef526185c2c275d97e77e72/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/2cbf1751fc8333245555e2f5211eed414d1cd7f5/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9e9fc60324566c5cb1ea2589f914f19048caae51/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/4.3.0/e874aaa3c69eb084f320e2895f582f81f0c08fa1/androidannotations-api-4.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e874aaa3c69eb084f320e2895f582f81f0c08fa1">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/androidannotations-api-4.3.0_f0b394c213745907855ec7d6fddcc629b8ea7d78/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/a02550a2090cb24d5cc69d9ebdda291378bbbf5a/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cad1364721fc716a39bdc351d3637edb634c9aa5">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a748f8baaf6386ab0022c6476c2b9414d997663c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/abde5d9fd7a7902769c23a0ce0346de344b47d91/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c47fc18767a9802d53a346d23f45318126b19b83/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/af0450c0855fb0de4019ad9d1bdd4a4df14de367/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e626861285b3e390bfa205eb0ccd15c8bb6f7322/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/5736ebec1bbe18bcb4a384543d2083b9c1cba23e/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_80e3afdbd1d94c2c4b1d1df0ea1632b92ce79dc8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/80ac86fd03592089a5c30f5cae705494d97c7bb9/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_63cf9bfc2440b5c0be7519a32b0a361e56581395/classes.dex" />
+        sha1="b2e3c04293a340aba5141546f548b630b87228ec">
+        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/2/qoppapdf_cc350fa436774e07b9686ed23289f5bc19b65d01/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -129,21 +21,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/haolek/.android/build-cache/358be29fd75bc64722980b7e880912e83471a960/output/jars/classes.jar"
+        jar="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_71d1e09d583b777c7d28587b17a53211c7b2f3f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/haolek/.android/build-cache/3e5df16778a00183aea94d780d3d6d2af86774dd/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eef871bdccc8fee59e93d0f1a89a0d44ca17b9e9/classes.dex" />
+        sha1="c00bda880bfd0f4f0c9639636cdfadb8ebe01a41">
+        <dex dex="/home/haolek/Documents/PDF-Speaker/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_78daa2a8cbb1c953aef526185c2c275d97e77e72/classes.dex" />
     </item>
     <item
         is-multidex="true"
