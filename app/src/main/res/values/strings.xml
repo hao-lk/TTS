@@ -12,8 +12,9 @@
     <string name="title_export">Export</string>
     <string name="title_stop">Stop</string>
     <string name="hint_text">COPY - PASTE, IMPORT .DOC .TXT .PDF || SEND LINK FROM WEB</string>
+    <string name="text_setting">Say what you type, you past, import 12 language with male, femaile. It have funy effect.</string>
 
-    
+
     <string-array name="array_sex">
         <item>ALEX</item>
         <item>TOM</item>
