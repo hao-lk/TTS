@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.ImageFilePath;
+import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.Utils;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
@@ -94,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e("hhhh", "myfile: " + resultUri);
-                File dir = Environment.getExternalStorageDirectory();
+                File dir = new File(Environment.getExternalStorageState());
 
                 int aa;
                 aa = mPdfView.getCurrentPage();
                 String text = null; //Extracting the content from the different pages
                 try {
-                    reader = new PdfReader(final_name);
+                    reader = new PdfReader(new File(dir,final_name).toString());
                     text = PdfTextExtractor.getTextFromPage(reader, aa + 1, new SimpleTextExtractionStrategy()).trim();
                 } catch (IOException e) {
                     Log.e(TAG, "onClick: " + e.getMessage());
@@ -227,8 +229,8 @@ public class MainActivity extends AppCompatActivity {
                 resultUri = data.getData();
                 File auxFile = new File(resultUri.getPath());
                 String pdfPath = auxFile.getAbsolutePath();
-                myfile = new File(PathUtils.getPath(this, resultUri));
-                Log.d(TAG, "pdfPath: " + pdfPath);
+                String aaaa= ImageFilePath.getPath(MainActivity.this, resultUri);
+                Log.d(TAG, "aaaa" + pdfPath);
 
 //                Log.e("hhhhh", "resultUri: " + resultUri);
                 mPdfView.fromUri(resultUri).load();
@@ -236,13 +238,12 @@ public class MainActivity extends AppCompatActivity {
 //                String path = resultUri.getPath();
 //                String final_name = resultUri.getLastPathSegment();
 //                final_name = final_name.replace("primary:", "");
-                String path = myfile.getPath();
-                String[] list = myfile.toString().split("/");
-                final_name = list[list.length - 1];
+//                String path = myfile.getPath();
+//                String[] list = myfile.toString().split("/");
+//                final_name = list[list.length - 1];
 //                File dir = Environment.getExternalStorageDirectory();
 
 //                File file = new File(dir, path);
-                Log.e(TAG, "final_name: " + final_name);
             }
         } else if (requestCode == REQUEST_CODE_IMPORT) {
             if (resultCode == RESULT_OK) {
