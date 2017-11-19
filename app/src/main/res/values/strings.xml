@@ -14,6 +14,11 @@
     <string name="hint_text">COPY - PASTE, IMPORT .DOC .TXT .PDF || SEND LINK FROM WEB</string>
     <string name="text_setting">Say what you type, you past, import 12 language with male, femaile. It have funy effect.</string>
 
+    <string name="rta_dialog_title">Rate this app</string>
+    <string name="rta_dialog_message">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
+    <string name="rta_dialog_ok">Rate now</string>
+    <string name="rta_dialog_cancel">Later</string>
+    <string name="rta_dialog_no">No, thanks</string>
 
     <string-array name="array_sex">
         <item>ALEX</item>

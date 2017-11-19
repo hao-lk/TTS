@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.ImageFilePath;
+import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.RateThisApp;
 import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.Utils;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.itextpdf.text.pdf.PdfReader;
@@ -168,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OptionsItem(R.id.menu_like)
     void clickMenuLike() {
-        file_chooser();
+        RateThisApp.showRateDialog(MainActivity.this, R.style.MyAlertDialogStyle2);
     }
 
     @OptionsItem(R.id.menu_setting)
