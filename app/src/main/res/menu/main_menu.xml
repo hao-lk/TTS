@@ -7,11 +7,6 @@
         app:showAsAction="ifRoom">
         <menu>
             <item
-                android:id="@+id/menu_more"
-                android:icon="@drawable/ic_more_24dp"
-                android:title="@string/menu_more"
-                app:showAsAction="never" />
-            <item
                 android:id="@+id/menu_share"
                 android:icon="@drawable/ic_share_black_24dp"
                 android:title="@string/menu_share"

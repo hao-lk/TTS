@@ -1,12 +1,13 @@
 package com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.Utils;
 
@@ -19,38 +20,28 @@ import java.io.File;
 @SuppressLint("Registered")
 @EActivity(R.layout.activity_import)
 public class ImportActivity extends AppCompatActivity {
+    private final int REQUEST_CODE_FILE = 1212;
     @ViewById(R.id.tvChooseFile)
     TextView mTvChooseFile;
-
-    private final int REQUEST_CODE_FILE = 1212;
     private Uri mResultUri;
-    private File myfile;
-    private String mPath;
 
     @Click(R.id.btnChooseFile)
     void clickBtnChooseFile() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("application/pdf");
-        // intent.putExtra(Intent.EXTRA_MIME_TYPES,ary);
-        startActivityForResult(intent, REQUEST_CODE_FILE);
+        try {
+            startActivityForResult(intent, REQUEST_CODE_FILE);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_FILE) {
             if (resultCode == RESULT_OK) {
-
                 mResultUri = data.getData();
-                mPath = mResultUri.getPath();
-                Log.e("hhhhh", "mPath: " + mPath);
-                String final_name = mResultUri.getLastPathSegment();
-                final_name = final_name.replace("primary:", "");
-                final_name = "/" + final_name;
-                File dir = Environment.getExternalStorageDirectory();
-                myfile = new File(dir, mPath);
-                Log.d("hhhh", "onActivityResult: " + myfile);
-                mTvChooseFile.setText(myfile.toString());
+                mTvChooseFile.setText(Utils.getFileName(ImportActivity.this, mResultUri));
             }
             super.onActivityResult(requestCode, resultCode, data);
         }

@@ -12,13 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.ImageFilePath;
 import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.RateThisApp;
 import com.AlanAIVoiceLAB.voicegeneratorfunnytexttospeech.Utils.Utils;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
+import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 import com.itextpdf.text.pdf.parser.SimpleTextExtractionStrategy;
+import com.shockwave.pdfium.PdfDocument;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -35,36 +39,34 @@ import java.util.Locale;
 @SuppressLint("Registered")
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.main_menu)
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnPageChangeListener, OnLoadCompleteListener,
+        OnPageErrorListener {
 
-    private static final String TAG = "MainActivity";
-    @ViewById(R.id.pdfView)
-    PDFView mPdfView;
-
-    @ViewById(R.id.btnPlay)
-    Button mBtnPlay;
-
-    @ViewById(R.id.btnStop)
-    Button mBtnStop;
-
-    @ViewById(R.id.btnNext)
-    Button mBtnNext;
-
-    @ViewById(R.id.btnBack)
-    Button mBtnBack;
-
-    @ViewById(R.id.toolbar)
-    Toolbar mToolbar;
-
-    Uri resultUri;
-    String final_name;
-    private final int CODE_REQUEST = 1212;
+    private static final String TAG = "qqq";
     public final int REQUEST_CODE_IMPORT = 110;
     public final int RESULT_CODE_IMPORT = 111;
+    private final int CODE_REQUEST = 1212;
     //public String text = null;
     public File myfile = null;
-    PdfReader reader = null;
     public ArrayList<Integer> bookmarks;
+    @ViewById(R.id.pdfView)
+    PDFView mPdfView;
+    @ViewById(R.id.btnPlay)
+    Button mBtnPlay;
+    @ViewById(R.id.btnStop)
+    Button mBtnStop;
+    @ViewById(R.id.btnNext)
+    Button mBtnNext;
+    @ViewById(R.id.btnBack)
+    Button mBtnBack;
+    @ViewById(R.id.toolbar)
+    Toolbar mToolbar;
+    Uri resultUri;
+    String final_name;
+    PdfReader reader = null;
+    String pdfFileName;
+    Integer pageNumber = 0;
+    Uri uri;
     private TextToSpeech mTextToSpeech;
 
     @AfterViews
@@ -73,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_info_black_24dp);
         Intent rcv = getIntent();
-        int page = rcv.getIntExtra("page", 0);
-        final String path = rcv.getStringExtra("path_rtrn");
 
 
         mTextToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -82,35 +82,24 @@ public class MainActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
                     mTextToSpeech.setLanguage(Locale.US);
-                    // Toast.makeText(MainActivity.this, "TTS INITIALIZED", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-//        mBtnPlay = (Button) findViewById(R.id.btnPlay);
-//        mBtnStop = (Button) findViewById(R.id.btnStop);
-//        mBtnNext = (Button) findViewById(R.id.btnNext);
-//        mBtnBack = (Button) findViewById(R.id.btnBack);
-        bookmarks = new ArrayList<>();
-        mPdfView.fromAsset("s1.pdf").load();
-//        mPdfView.fromFile(myfile).defaultPage(page - 1).load();
         mBtnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("hhhh", "myfile: " + resultUri);
-                File dir = new File(Environment.getExternalStorageState());
 
                 int aa;
                 aa = mPdfView.getCurrentPage();
-                String text = null; //Extracting the content from the different pages
+                String text = null;
                 try {
-                    reader = new PdfReader(new File(dir,final_name).toString());
+                    reader = new PdfReader(String.valueOf(myfile));
                     text = PdfTextExtractor.getTextFromPage(reader, aa + 1, new SimpleTextExtractionStrategy()).trim();
                 } catch (IOException e) {
                     Log.e(TAG, "onClick: " + e.getMessage());
                     e.printStackTrace();
                 }
-                Log.e("hhhh", "text: " + text);
-                Toast.makeText(MainActivity.this, "speaking..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Speaking...", Toast.LENGTH_SHORT).show();
                 mTextToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
             }
         });
@@ -157,104 +146,71 @@ public class MainActivity extends AppCompatActivity {
         ExportActivity_.intent(this).start();
     }
 
-    @OptionsItem(R.id.menu_more)
-    void clickMenuMore() {
-
-    }
-
     @OptionsItem(R.id.menu_share)
     void clickMenuShare() {
-        goto_homepage();
+        shareApp();
     }
 
     @OptionsItem(R.id.menu_like)
     void clickMenuLike() {
-        RateThisApp.showRateDialog(MainActivity.this, R.style.MyAlertDialogStyle2);
+        RateThisApp.showRateDialog(MainActivity.this, R.style.MyAlertDialogStyle);
     }
 
-    @OptionsItem(R.id.menu_setting)
-    void clickMenuSetting() {
-        add_bookmark();
+
+    public void shareApp() {
+        String message = Uri.parse("http://play.google.com/store/apps/details?id=" + this.getPackageName()).toString();
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.putExtra(Intent.EXTRA_TEXT, message);
+        startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
     }
 
-    public void goto_homepage() {
-        //Toast.makeText(this, "go to Homepage..", Toast.LENGTH_LONG).show();
-        mPdfView.jumpTo(0);
-    }
-
-    public void add_bookmark() {
-        //Toast.makeText(this, "add bookmark..", Toast.LENGTH_SHORT).show();
-//        int pg_no = mPdfView.getCurrentPage() + 1;
-//        bookmarks.add(pg_no);
-//        Toast.makeText(this, "Bookmark added" + bookmarks, Toast.LENGTH_SHORT).show();
-        SettingActivity_.intent(this).start();
-
-    }
-
-    public void file_chooser() {
-        //Toast.makeText(MainActivity.this, "inside file chooser ", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.setType("application/pdf");
-        // intent.putExtra(Intent.EXTRA_MIME_TYPES,ary);
-        startActivityForResult(intent, CODE_REQUEST);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CODE_REQUEST) {
+        if (requestCode == REQUEST_CODE_IMPORT) {
             if (resultCode == RESULT_OK) {
-
-                /*
-                 * code chinh
-                 */
-//                resultUri = data.getData();
-//
-//                mPdfView.fromUri(resultUri).load();
-//
-//                path = resultUri.getLastPathSegment();
-//                Log.e("hhhh", "onActivityResult: " + resultUri);
-
-//                String final_name = resultUri.getLastPathSegment();
-//                final_name = final_name.replace("primary:", "");
-//                final_name = "/" + final_name;
-//                File dir = Environment.getExternalStorageDirectory();
-//                myfile = new File(resultUri.toString());
-//                Log.d("hhhh", "myfile: " + myfile);
-//            Log.d("hhhh", "final_name: "+final_name);
-
-                /*
-                 * demo
-                 */
-
-                resultUri = data.getData();
-                File auxFile = new File(resultUri.getPath());
-                String pdfPath = auxFile.getAbsolutePath();
-                String aaaa= ImageFilePath.getPath(MainActivity.this, resultUri);
-                Log.d(TAG, "aaaa" + pdfPath);
-
-//                Log.e("hhhhh", "resultUri: " + resultUri);
-                mPdfView.fromUri(resultUri).load();
-
-//                String path = resultUri.getPath();
-//                String final_name = resultUri.getLastPathSegment();
-//                final_name = final_name.replace("primary:", "");
-//                String path = myfile.getPath();
-//                String[] list = myfile.toString().split("/");
-//                final_name = list[list.length - 1];
-//                File dir = Environment.getExternalStorageDirectory();
-
-//                File file = new File(dir, path);
-            }
-        } else if (requestCode == REQUEST_CODE_IMPORT) {
-            if (resultCode == RESULT_OK) {
-                String string = data.getExtras().getString(Utils.KEY_FILE_NAME);
-                resultUri = Uri.parse(string);
-                mPdfView.fromUri(resultUri).load();
+                uri = Uri.parse(String.valueOf(data.getExtras().getString(Utils.KEY_FILE_NAME)));
+                File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                myfile = new File(dir, Utils.getFileName(MainActivity.this, uri));
+                displayFromUri(uri);
             }
         }
-
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    private void displayFromUri(Uri uri) {
+        mPdfView.fromUri(uri)
+                .defaultPage(pageNumber)
+                .onPageChange(this)
+                .enableAnnotationRendering(true)
+                .onLoad(this)
+                .scrollHandle(new DefaultScrollHandle(this))
+                .spacing(10) // in dp
+                .onPageError(this)
+                .load();
+    }
+
+    @Override
+    public void loadComplete(int nbPages) {
+        PdfDocument.Meta meta = mPdfView.getDocumentMeta();
+        Log.e(TAG, "title = " + meta.getTitle());
+        Log.e(TAG, "author = " + meta.getAuthor());
+        Log.e(TAG, "subject = " + meta.getSubject());
+        Log.e(TAG, "keywords = " + meta.getKeywords());
+        Log.e(TAG, "creator = " + meta.getCreator());
+        Log.e(TAG, "producer = " + meta.getProducer());
+        Log.e(TAG, "creationDate = " + meta.getCreationDate());
+        Log.e(TAG, "modDate = " + meta.getModDate());
+    }
+
+    @Override
+    public void onPageChanged(int page, int pageCount) {
+
+    }
+
+    @Override
+    public void onPageError(int page, Throwable t) {
+        Log.e(TAG, "Cannot load page " + page);
+    }
 }
